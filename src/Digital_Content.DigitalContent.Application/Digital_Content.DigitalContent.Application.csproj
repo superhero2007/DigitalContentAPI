@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props">
+  </Import>
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+    <AssemblyName>Digital_Content.DigitalContent.Application</AssemblyName>
+    <PackageId>Digital_Content.DigitalContent.Application</PackageId>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>Digital_Content.DigitalContent</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Currencies\NewFolder\**" />
+    <EmbeddedResource Remove="Currencies\NewFolder\**" />
+    <None Remove="Currencies\NewFolder\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EPPlus.Core" Version="1.5.1" />
+    <PackageReference Include="FileStorage.AmazonS3" Version="0.1.15" />
+    <PackageReference Include="QRCoder" Version="1.3.2" />
+    <PackageReference Include="Stripe.net" Version="10.4.0" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System.Drawing" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Digital_Content.DigitalContent.Core\Digital_Content.DigitalContent.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net461'">
+    <DefineConstants>FEATURE_LDAP;FEATURE_SIGNALR</DefineConstants>
+  </PropertyGroup>
+</Project>

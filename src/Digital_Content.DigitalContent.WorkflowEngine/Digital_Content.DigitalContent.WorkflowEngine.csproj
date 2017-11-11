@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{974291D8-2FA0-4908-A591-582E97995984}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Digital_Content.DigitalContent.WorkflowEngine</RootNamespace>
+    <AssemblyName>Digital_Content.DigitalContent.WorkflowEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\src\Digital_Content.DigitalContent.WorkflowEngine\packages\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OptimaJet.Workflow.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3d29392dccd464d7, processorArchitecture=MSIL">
+      <HintPath>..\..\src\Digital_Content.DigitalContent.WorkflowEngine\packages\OptimaJet.Workflow.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OptimaJet.Workflow.DbPersistence, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3d29392dccd464d7, processorArchitecture=MSIL">
+      <HintPath>..\..\src\Digital_Content.DigitalContent.WorkflowEngine\packages\OptimaJet.Workflow.DbPersistence.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\WorkflowInit.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\Digital_Content.DigitalContent.WorkflowEngine\packages\Newtonsoft.Json.dll" />
+    <Content Include="src\Digital_Content.DigitalContent.WorkflowEngine\packages\Newtonsoft.Json.xml" />
+    <Content Include="src\Digital_Content.DigitalContent.WorkflowEngine\packages\OptimaJet.Workflow.Core.dll" />
+    <Content Include="src\Digital_Content.DigitalContent.WorkflowEngine\packages\OptimaJet.Workflow.Core.XML" />
+    <Content Include="src\Digital_Content.DigitalContent.WorkflowEngine\packages\OptimaJet.Workflow.DbPersistence.dll" />
+    <Content Include="SQL\CreatePersistenceObjects.sql" />
+    <Content Include="SQL\CreatePersistenceObjectsForAzureSQL.sql" />
+    <Content Include="SQL\DropPersistenceObjects.sql" />
+    <Content Include="SQL\update_1_3_to_1_4.sql" />
+    <Content Include="SQL\update_1_4_5_to_1_5.sql" />
+    <Content Include="SQL\update_1_4_to_1_4_3.sql" />
+    <Content Include="SQL\update_1_4_to_1_4_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Digital_Content.DigitalContent.Core\Digital_Content.DigitalContent.Core.csproj">
+      <Project>{0fa75a5b-ab83-4fd0-b545-279774c01e87}</Project>
+      <Name>Digital_Content.DigitalContent.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
